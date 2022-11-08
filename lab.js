@@ -6,7 +6,13 @@
 
 //Code here
 
-
+const me = {
+  name: "Moldir",
+  age: 29
+}
+console.log(me.name)
+console.log(me['age'])
+console.log("-------------")
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
@@ -17,7 +23,12 @@
 
 //Code here
 
-
+const dog ={
+  name : "Rex",
+  color: 'black',
+  age : 7,
+  goodBoy: true
+}
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
@@ -25,14 +36,16 @@
 //Code here
 
 
+console.log(dog.name)
 
+console.log("-------------")
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here`
 
-
-
+console.log(dog['color'])
+console.log("-------------")
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
   Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday.
@@ -40,22 +53,36 @@
 */
 
 //Code here
-
-
+const favoriteThings = {
+  band: 'MuzArt',
+  food: "Lasagna", 
+  person: "Jennifer Lopez",
+  book: 'The Principles',
+  movie: 'Titanic',
+  holiday: 'New Year'
+}
+console.log("-------------")
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
 //Code here
+favoriteThings.car = 'BMW'
+favoriteThings.show = 'Chbd'
 
-
+console.log(favoriteThings)
+console.log("-------------")
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
 //Code here
-
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings.book = "Harry Potter"
+console.log(favoriteThings.food)
+console.log(favoriteThings.book)
+console.log("-------------")
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -74,6 +101,7 @@ var carDetails = {
 
 //Code Here
 
+const {color, make, model, year} = carDetails
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -86,7 +114,7 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
-  
+  const {title, firstName, lastName} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -106,7 +134,10 @@ function greeting( obj ) {
 
 //Code Here
 
-
+function totalPopulation(obj){
+  const {utah, california, texas, arizona} = obj
+  return utah + california+ texas + arizona
+}
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -119,7 +150,11 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients(obj){
+  const {carb, fat, protein} = obj
+  let arr = []
+  return arr.push('carb', 'fat', 'protein')
+}
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
@@ -141,16 +176,27 @@ var user = {
 */
 
 //Code Here
+let clone ={}
+for(let key in user){
+  clone[key] = user[key]
+}
+clone.name = 'Bryan G. Smith'
+clone.email = 'bryan.smith@devmounta.in'
 
 
+console.log(user)
+
+console.log("-------------")
+console.log(clone)
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
-
-
+delete user.age
+console.log(user)
+console.log("-------------")
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
